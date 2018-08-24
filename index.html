@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<title>Connect 4</title>
+
+		<style>
+
+			td {
+				width: 40px;
+				height: 40px;
+				border: 1px solid lightgrey;
+				text-align: center;
+				padding: 0px;
+				margin:  0px;
+			}
+
+			table{
+				margin: auto;
+				margin-top: 40px;
+				border-spacing: 0px;
+
+			}
+
+			.red{
+				background-color: red;
+			}
+
+			.blue{
+				background-color: blue;
+			}
+
+			.blank{
+				background-color: white;
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<table>
+
+			<tbody id="tableBuilder">
+				
+
+			</tbody>
+
+		</table>
+		
+	</body>
+	<script>
+  
+		document.getElementById("tableBuilder").addEventListener("click", function(){
+
+			console.log(event.target.id)
+			console.log(event.target.classList)
+
+		})
+
+		var tableBuilderVar = document.getElementById("tableBuilder")
+
+		function initGameBoard(){
+			for (var i = 0; i < 6; i++) {
+
+				tableBuilderVar.innerHTML += "<tr id='row" + i + "'>"
+				var tempRow = document.getElementById("row" + i)
+
+				for (var j = 0; j < 7; j++) {
+
+					tempRow.innerHTML += "<td class='blank' id='" + i + "-" + j + "'></td>"
+	
+				}		
+			}		
+		}
+
+		initGameBoard()
+
+	</script>
+</html>
+
